@@ -4,3 +4,5 @@ GIT_COMMITTER_DATE="DAY date Mmm YYYY HH:MM:SS TIMEZONE" git commit --amend --no
 
 2. "SAT 12 Jan 2019 12:00:00 GMT+9"
     - GMT+9: Seoul time zone
+
+3.

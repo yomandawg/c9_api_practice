@@ -1,0 +1,10 @@
+<h1>{{ article.id }}번 글 수정</h1>
+
+<form action="{% url 'update' article.id %}" method="POST">
+    제목: <input type="text" value="{{ article.title }}" name="title"/>
+    내용: <input type="text" value="{{ article.content }}" name="content"/>
+    <input type="submit" value="수정 완료"/>
+    {% csrf_token %} <!-- Django CSRF token -->
+</form>
+
+<a href="{% url 'detail' article.id %}">돌아가기</a>

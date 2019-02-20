@@ -1,0 +1,7 @@
+<h2>{{ article.id}}번 글</h2>
+<h1>{{ article.title }}</h1>
+<h2>{{ article.content }}</h2>
+
+<a href="{% url 'index' %}">글 목록</a>
+<a href="{% url 'edit' article.id %}">[수정]</a>
+<a href="{% url 'delete' article.id  %}">[삭제]</a>

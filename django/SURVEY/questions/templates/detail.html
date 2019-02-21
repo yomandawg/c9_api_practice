@@ -1,0 +1,20 @@
+<h2>{{ question.id }}번 설문</h2>
+<h1>{{ question.title }}</h1>
+
+<ul>
+    {% for choice in question.choices.all %}
+    <li>{{ choice.content }}: {{ choice.votes }}표</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'vote' question.id %}">투표하기</a>
+
+<h3>새로운 문항 등록</h3>
+<form action="{% url 'choice' question.id %}" method="POST">
+    <input type="text" name="content"/>
+    <input type="submit" value="Submit"/>
+    {% csrf_token %}
+</form>
+
+<a href="{% url 'index' %}">설문 목록</a>
+<a href="{% url 'delete' question.id  %}">[삭제]</a>

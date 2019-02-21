@@ -1,0 +1,13 @@
+<h2>{{ question.id }}번 설문 투표하기</h2>
+<h1>{{ question.title }}</h1>
+
+<form action="{% url 'select' question.id %}" method="POST">
+    {% for choice in question.choices.all %}
+    <input type="checkbox" name="choice_id" value="{{ choice.id }}">{{ choice.content }}<br>
+    {% endfor %}
+    <br>
+    <input type="submit" value="Submit">
+    {% csrf_token %}
+</form>
+
+<a href="{% url 'detail' question.id %}">돌아가기</a>

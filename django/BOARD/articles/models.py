@@ -10,3 +10,8 @@ class Article(models.Model):
         
     def __str__(self): # for print
         return f"<{self.id}, {self.title} : {self.content}>"
+
+class Comment(models.Model):
+    content = models.TextField()
+    # 속한 글의 ForeignKey, 속한 글이 지워졌을 경우 모든 comment 삭제
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")

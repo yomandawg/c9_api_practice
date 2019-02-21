@@ -5,3 +5,24 @@
 <a href="{% url 'index' %}">글 목록</a>
 <a href="{% url 'edit' article.id %}">[수정]</a>
 <a href="{% url 'delete' article.id  %}">[삭제]</a>
+
+<hr>
+
+<h3>댓글</h3>
+
+<form action="{% url 'comment' article.id %}" method="POST">
+    <input type="text" name="content"/>
+    <input type="submit" value="Submit"/>
+    {% csrf_token %}
+</form>
+
+<ul>
+    <!--{% for comment in comments %}-->
+    <!--<li>{{ comment.content }}</li>-->
+    <!--{% endfor %}-->
+    
+    
+    {% for comment in article.comments.all %}
+    <li>{{ comment.content }}</li>
+    {% endfor %}
+</ul>

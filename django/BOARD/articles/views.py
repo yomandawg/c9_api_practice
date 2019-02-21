@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Article
+from .models import Article, Comment
 
 
 def index(request):
@@ -24,8 +24,10 @@ def create(request):
 def detail(request, article_id):
     # id를 통해 해당하는 글을 찾아 보여줌
     article = Article.objects.get(id=article_id)
+    comments = Comment.objects.filter(article_id=article_id).all()
     context = {
         'article': article,
+        'comments': comments,
     }
     return render(request, 'articles/detail.html', context)
     
@@ -47,3 +49,10 @@ def delete(request, article_id):
     a = Article.objects.get(id=article_id)
     a.delete()
     return redirect('index')
+    
+def comment(request, article_id):
+    # 댓글을 작성한다
+    content = request.POST.get('content')
+    comment = Comment(content=content, article_id=article_id) # <article=객체>로도 가능
+    comment.save()
+    return redirect('detail', article_id)

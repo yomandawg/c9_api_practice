@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+        apiKey: "AIzaSyCh0d33lrF0di8GOkpb5qLJh3zHxcqwHf4",
+        databaseURL: "https://todo-ff43e.firebaseio.com",
+        projectId: "todo-ff43e",
+    };
+    firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <input v-model="newTodo" @keyup.enter="addTodo">
+        </div>
+        <div>
+            <ul>
+                <li v-for='todo in todos'>
+                    <input v-model="todo.completed" @change="updateTodo(todo)" type="checkbox">
+                    {{ todo.content }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <!-- Vuefire -->
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script> 
+    <script>
+        const db = firebase.database()
+        const app = new Vue({
+            el: '#app',
+            data: {
+                newTodo: '',
+                // todos: [],
+            },
+            methods: {
+                addTodo: function() {
+                    // this.todos.push(this.newTodo)
+                    this.$firebaseRefs.todos.push({
+                        id: Date.now(),
+                        content: this.newTodo,
+                        completed: false
+                    })
+                    this.newTodo = ''
+                },
+                updateTodo: function(todo) {
+                    const newTodo = { ...todo } // spread operator: 객체복사
+                    delete newTodo['.key']
+                    this.$firebaseRefs.todos.child(todo['.key']).set(newTodo)
+                }
+            },
+            // Vuefire properties
+            firebase: {
+                todos: db.ref('todos')
+            }
+        })
+    </script>
+</body>
+</html>

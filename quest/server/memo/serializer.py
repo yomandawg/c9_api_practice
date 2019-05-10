@@ -5,4 +5,3 @@ class MemoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Memo
         fields = ['content',]
-

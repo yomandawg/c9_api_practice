@@ -15,4 +15,3 @@
 2. `created` life cycle 에서 axios 로 위 api 서버에서 memos 를 불러온 뒤 Vue 의 data 인 memos 에 바인딩한다.
 3. submit 버튼이 눌리면 axios 로 위 api 서버로 `content` 의 내용을 작성한뒤 응답받은 memo 를 Vue 의 memos 에 push 한다.
 4. memo 가 작성될때마다 textarea 의 값은 초기화된다.
-

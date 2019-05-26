@@ -1,6 +1,79 @@
 
-# Created by https://www.gitignore.io/api/node,code,vuejs,django,pycharm,jupyternotebook
-# Edit at https://www.gitignore.io/?templates=node,code,vuejs,django,pycharm,jupyternotebook
+# Created by https://www.gitignore.io/api/c,c++,node,code,vuejs,flask,django,python,pycharm,jupyternotebook
+# Edit at https://www.gitignore.io/?templates=c,c++,node,code,vuejs,flask,django,python,pycharm,jupyternotebook
+
+### C ###
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+### C++ ###
+# Prerequisites
+
+# Compiled Object files
+*.slo
+
+# Precompiled Headers
+
+# Compiled Dynamic libraries
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+
+# Executables
 
 ### Code ###
 .vscode/*
@@ -28,7 +101,6 @@ media
 *$py.class
 
 # C extensions
-*.so
 
 # Distribution / packaging
 .Python
@@ -141,6 +213,65 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+### Flask ###
+instance/*
+!instance/.gitignore
+
+### Flask.Python Stack ###
+# Byte-compiled / optimized / DLL files
+
+# C extensions
+
+# Distribution / packaging
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+
+# Installer logs
+
+# Unit test / coverage reports
+
+# Translations
+
+# Django stuff:
+
+# Flask stuff:
+
+# Scrapy stuff:
+
+# Sphinx documentation
+
+# PyBuilder
+
+# Jupyter Notebook
+
+# IPython
+
+# pyenv
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don’t work, or not
+#   install all needed dependencies.
+
+# celery beat schedule file
+
+# SageMath parsed files
+
+# Environments
+
+# Spyder project settings
+
+# Rope project settings
+
+# mkdocs documentation
+
+# mypy
+
+# Pyre type checker
 
 ### JupyterNotebook ###
 */.ipynb_checkpoints/*
@@ -314,10 +445,65 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+### Python ###
+# Byte-compiled / optimized / DLL files
+
+# C extensions
+
+# Distribution / packaging
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+
+# Installer logs
+
+# Unit test / coverage reports
+
+# Translations
+
+# Django stuff:
+
+# Flask stuff:
+
+# Scrapy stuff:
+
+# Sphinx documentation
+
+# PyBuilder
+
+# Jupyter Notebook
+
+# IPython
+
+# pyenv
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don’t work, or not
+#   install all needed dependencies.
+
+# celery beat schedule file
+
+# SageMath parsed files
+
+# Environments
+
+# Spyder project settings
+
+# Rope project settings
+
+# mkdocs documentation
+
+# mypy
+
+# Pyre type checker
+
 ### Vuejs ###
 # Recommended template: Node.gitignore
 
 npm-debug.log
 yarn-error.log
 
-# End of https://www.gitignore.io/api/node,code,vuejs,django,pycharm,jupyternotebook
+# End of https://www.gitignore.io/api/c,c++,node,code,vuejs,flask,django,python,pycharm,jupyternotebook

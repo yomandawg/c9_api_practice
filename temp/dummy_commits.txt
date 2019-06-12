@@ -12,3 +12,7 @@ GIT_COMMITTER_DATE="DAY date Mmm YYYY HH:MM:SS TIMEZONE" git commit --amend --no
 5. "FRI 04 Jan 2019 08:30:22 GMT+9"
 
 6. "SUN 17 Mar 2019 08:30:28 GMT+9"
+
+
+
+GIT_COMMITTER_DATE="TUE 21 May 2019 14:14:07 GMT+9" git commit --amend --no-edit --date "DAY date Mmm YYYY HH:MM:SS TIMEZONE"
